@@ -5,7 +5,7 @@ let word3 = "what";
 let word4 = "it";
 let word5 = "is";
 
-let r, g, b, rRemix, bRemix, gRemix;
+let r, g, b;
 
 function preload() {
   fonts.push(loadFont("assets/AUTHENTICSans-90.otf"));
@@ -58,8 +58,6 @@ function setup() {
   font4 = random(fonts);
   font5 = random(fonts);
 
-  console.log(font1.src);
-
   // remix button
   let remixButton = createButton("REMIX");
   remixButton.class("remixButton");
@@ -70,26 +68,16 @@ function setup() {
   saveButton.class("saveButton");
   saveButton.mousePressed(remember);
 
-  // Get the modal
+  // info modal
   let modal = document.getElementById("myModal");
-
-  // Get the button that opens the modal
   let btn = document.getElementById("myBtn");
-
-  // Get the <span> element that closes the modal
   let span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks on the button, open the modal
   btn.onclick = function () {
     modal.style.display = "block";
   };
-
-  // When the user clicks on <span> (x), close the modal
   span.onclick = function () {
     modal.style.display = "none";
   };
-
-  // When the user clicks anywhere outside of the modal, close it
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
@@ -97,13 +85,10 @@ function setup() {
   };
 }
 
+
 function remix() {
-  // rRemix = random(0, 255);
-  // gRemix = random(0, 255);
-  // bRemix = random(0, 255);
-  // background(rRemix, gRemix, bRemix);
-  
-    r = random(0, 255);
+  resizeCanvas(windowWidth, windowHeight);
+  r = random(0, 255);
   g = random(0, 255);
   b = random(0, 255);
   background(r, g, b);
@@ -114,7 +99,6 @@ function remix() {
   font5 = random(fonts);
 }
 
-function invert() {}
 
 function remember() {
   resizeCanvas(850, 1100);
@@ -136,21 +120,6 @@ function remember() {
   textFont(font5);
   textAlign(LEFT);
   text(word5, 442, 880);
-  //   textFont(font1);
-  // textAlign(RIGHT);
-  // text(word1, width * 0.48, height * 0.3);
-  // textFont(font2);
-  // textAlign(LEFT);
-  // text(word2, width * 0.52, height * 0.3);
-  // textFont(font3);
-  // textAlign(CENTER);
-  // text(word3, width * 0.5, height * 0.55);
-  // textFont(font4);
-  // textAlign(RIGHT);
-  // text(word4, width * 0.48, height * 0.8);
-  // textFont(font5);
-  // textAlign(LEFT);
-  // text(word5, width * 0.52, height * 0.8);
   saveCanvas("it-is-what-it-is.jpg");
 }
 
@@ -179,39 +148,4 @@ background(r, g, b);
   textAlign(LEFT);
   text(word5, width * 0.52, height * 0.87);
 
-  // if (windowWidth > 1000) {
-  //   textSize((windowWidth + windowHeight) * 0.10);
-  //   textFont(font1);
-  //   textAlign(RIGHT);
-  //   text(word1, width * 0.48, height * 0.33);
-  //   textFont(font2);
-  //   textAlign(LEFT);
-  //   text(word2, width * 0.52, height * 0.33);
-  //   textFont(font3);
-  //   textAlign(CENTER);
-  //   text(word3, width * 0.5, height * 0.6);
-  //   textFont(font4);
-  //   textAlign(RIGHT);
-  //   text(word4, width * 0.48, height * 0.87);
-  //   textFont(font5);
-  //   textAlign(LEFT);
-  //   text(word5, width * 0.52, height * 0.87);
-  // } else {
-  //   textSize((windowWidth + windowHeight) * 0.10);
-  //   textFont(font1);
-  //   textAlign(RIGHT);
-  //   text(word1, width * 0.48, height * 0.33);
-  //   textFont(font2);
-  //   textAlign(LEFT);
-  //   text(word2, width * 0.52, height * 0.33);
-  //   textFont(font3);
-  //   textAlign(CENTER);
-  //   text(word3, width * 0.5, height * 0.6);
-  //   textFont(font4);
-  //   textAlign(RIGHT);
-  //   text(word4, width * 0.48, height * 0.87);
-  //   textFont(font5);
-  //   textAlign(LEFT);
-  //   text(word5, width * 0.52, height * 0.87);
-  // }
 }
