@@ -1,0 +1,94 @@
+html,
+body {
+  margin: 0;
+  padding: 0px;
+  background-color: white;
+}
+canvas {
+/*   display: block;
+  margin: 0 auto;  */
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px black;
+}
+
+@font-face {
+  font-family: Hershey-Futura-Simplex;
+  src: url("assets/Hershey-Noailles-Futura-Simplex-Regular.otf");
+}
+
+button {
+  padding: 4px 8px 4px 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+  font-family: Hershey-Futura-Simplex;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.remixButton {
+  position: fixed;
+  bottom: 24px;
+  left: 48px;
+}
+
+.saveButton {
+  position: fixed;
+  bottom: 24px;
+  left: 120px;
+}
+
+#myBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  /*   background-color: white; /* Fallback color */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  width: 33%;
+  font-family: Hershey-Futura-Simplex;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* The Close Button */
+.close {
+  float: right;
+  font-family: Hershey-Futura-Simplex;
+  font-size: 16px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
